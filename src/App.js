@@ -1,6 +1,6 @@
 import './App.css';
 import PaginaBuscador from './paginas/PaginaBuscador';
-import PaginaDetalle from './paginas/PaginaDetalle';
+
 import {
   createBrowserRouter,
   RouterProvider
@@ -17,10 +17,7 @@ const router = createBrowserRouter([
     path: "/buscador",
     element: <PaginaBuscador />,
   },
-  {
-    path: "/buscador/:id",
-    element: <PaginaDetalle />,
-  },
+ 
 ]);
 
 function App() {

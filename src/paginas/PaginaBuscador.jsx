@@ -46,7 +46,7 @@ const PaginaBuscador = () => {
         <Container maxWidth='bm' align="center">
             <Header/>
             <Buscador onBuscar={onBuscar}/>
-            <Result />
+            {noticias && <Result /> }
             { isLoading && <Loading/> }
             { noticias && <ListaNoticias noticias={noticias}/> }    
             { noticias && <Paginador cantidadPaginas={cantidadPaginas} onChange={onCambioPagina}/> } 
