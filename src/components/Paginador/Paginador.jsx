@@ -12,7 +12,7 @@ const Paginador = ({
         <Pagination 
             count={cantidadPaginas} 
             variant="outlined" 
-            shape="rounded"
+            //shape="rounded"
             onChange={cambiaPagina} 
         />
             

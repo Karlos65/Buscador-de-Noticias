@@ -29,7 +29,7 @@ const PaginaBuscador = () => {
         const { articles: notis, totalResults } = await getListadoNoticias(searchParams.get('query'), pagina);
         setNoticias(notis);
         console.log(totalResults);
-        setCantidadPaginas(Math.round(parseInt(totalResults)/10))
+        setCantidadPaginas(Math.ceil(parseInt(totalResults)/10))
         setIsLoading(false);//1
     }
 
@@ -39,6 +39,7 @@ const PaginaBuscador = () => {
     };
      //console.log(noticias);
     const onCambioPagina = (pagina) => {
+        console.log(pagina)
         setPagina(pagina);
     }
 
@@ -46,7 +47,7 @@ const PaginaBuscador = () => {
         <Container maxWidth='bm' align="center">
             <Header/>
             <Buscador onBuscar={onBuscar}/>
-            {noticias && <Result /> }
+            {noticias && ('Esta viendo '+ pagina*10 + ' resultados de un total de: ' + cantidadPaginas*10)}
             { isLoading && <Loading/> }
             { noticias && <ListaNoticias noticias={noticias}/> }    
             { noticias && <Paginador cantidadPaginas={cantidadPaginas} onChange={onCambioPagina}/> } 
